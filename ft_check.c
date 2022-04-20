@@ -23,14 +23,16 @@ void	check_args(int ac, char **av)
 	while (++jdx < ac)
 	{
 		if (!av[jdx])
-			error_empty();
+			error();
 		idx = -1;
 		while (av[jdx][++idx])
 		{
 			if (idx == 0 && (av[jdx][idx] == '-' || av[jdx][idx] == '+'))
 				idx++;
+			if (av[jdx][idx] == ' ')
+				idx++;
 			if (!ft_isdigit(av[jdx][idx]))
-				error_not_digit();
+				error();
 		}
 	}
 }

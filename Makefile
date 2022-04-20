@@ -15,4 +15,4 @@ clean :
 
 fclean :
 	make fclean -C ./libft
-	rm -rf $(OBJ) $(NAME) push_swap.dSYM
+	rm -rf $(OBJ) $(NAME) push_swap.dSYM .vscode

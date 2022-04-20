@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_list	*stock_elements(t_stack *stack_a, int ac, char **av)
+/* t_list	*stock_elements(t_stack *stack_a, int ac, char **av)
 {
 	int		idx;
 	t_list	*elm;
@@ -26,4 +26,4 @@ t_list	*stock_elements(t_stack *stack_a, int ac, char **av)
 	{
 		
 	}
-}
+} */
