@@ -11,3 +11,29 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stack	*new_node(int elem)
+{
+	t_stack	*new;
+
+	new = (t_stack *)malloc(sizeof(t_stack));
+	if (!new)
+		exit (EXIT_FAILURE);
+	new->elem = elem;
+	new->next = NULL;
+	return (new);
+}
+
+
+
+void	add_node(t_stack **lst , t_stack *new)
+{
+	if (!*lst)
+		*lst = new;
+	else
+	{
+		while ((*lst)->next)
+			*lst = (*lst)->next;
+		(*lst)->next = new;
+	}
+} 
