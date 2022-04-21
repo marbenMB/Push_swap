@@ -12,18 +12,14 @@
 
 #include "push_swap.h"
 
-/* t_list	*stock_elements(t_stack *stack_a, int ac, char **av)
+t_list	*stock_elements(int ac, char **av)
 {
 	int		idx;
-	t_list	*elm;
+	t_list	*stack_a;
 
 	idx = 0;
-	elm = (t_list *)malloc(sizeof(t_list));
-	if (!elm)
-		error();
-	elm = ft_lstnew(ft_atoi(av[++idx]));
 	while (++idx < ac)
-	{
-		
-	}
-} */
+		ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(av[idx])));
+
+	return (stack_a);
+}

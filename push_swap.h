@@ -30,12 +30,11 @@ typedef struct s_stack
 }	t_stack;
 //	FUNCTIONS	***********	:
 //	***********	Error Handling :
-void	error_no_args(void);
-void	error_not_digit(void);
-void	error_empty(void);
 void	error(void);
 //	***********	Check Functions :
 void	check_args(int ac, char **av);	//	Check if av : is empty || contains only digits
 //	***********	Push_swap Function :
 void	push_swap(int ac, char **av);
+//	***********	Push_swap Utils Function :
+t_list	*stock_elements(int ac, char **av);
 #endif
