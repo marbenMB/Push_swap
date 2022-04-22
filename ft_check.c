@@ -22,17 +22,45 @@ void	check_args(int ac, char **av)
 	jdx = 0;
 	while (++jdx < ac)
 	{
-		if (!av[jdx])
+		idx = 0;
+		if (!av[jdx] || av[jdx][idx] == '\0')
 			error();
-		idx = -1;
 		while (av[jdx][++idx])
 		{
-			if (idx == 0 && (av[jdx][idx] == '-' || av[jdx][idx] == '+'))
-				idx++;
 			if (av[jdx][idx] == ' ')
 				idx++;
-			if (!ft_isdigit(av[jdx][idx]))
+			if (av[jdx][idx] == '-' || av[jdx][idx] == '+')
+			{
+				if (ft_isdigit(av[jdx][--idx]))
+					error();
+				idx++;
+				if (!(ft_isdigit(av[jdx][idx])))
+					error();
+				else if (ft_isdigit(av[jdx][idx]))
+					idx++;
+			}
+			if (!(ft_isdigit(av[jdx][idx]) || av[jdx][idx] == ' '))
 				error();
 		}
+	}
+}
+
+void	check_duplicated(t_list *stack_a)
+{
+	int		now;
+	t_list	*start;
+
+	start = stack_a;
+	while (start)
+	{
+		now = start->content;
+		while (stack_a->next)
+		{
+			stack_a = stack_a->next;
+			if (now == stack_a->content)
+				error();
+		}
+		start = start->next;
+		stack_a = start;
 	}
 }

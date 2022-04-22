@@ -12,14 +12,30 @@
 
 #include "push_swap.h"
 
-t_list	*stock_elements(int ac, char **av)
+void	free_tab(char **tab)
 {
 	int		idx;
-	t_list	*stack_a;
 
-	idx = 0;
-	while (++idx < ac)
-		ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(av[idx])));
+	idx = -1;
+	while (tab[++idx])
+		free(tab[idx]);
+	free(tab);
+}
+
+t_list	*stock_elements(t_list	*stack_a, int ac, char **av)
+{
+	int		idx[2];
+	char	**arg;
+
+	idx[0] = 0;
+	while (++idx[0] < ac)
+	{
+		idx[1] = -1;
+		arg = ft_split(av[idx[0]], ' ');
+		while (arg[++idx[1]])
+			ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(arg[idx[1]])));
+		free_tab(arg);
+	}
 
 	return (stack_a);
 }

@@ -21,20 +21,14 @@
 # include <string.h>
 # include "./libft/libft.h"
 
-
-//	STRUCT	***********	:
-typedef struct s_stack
-{
-	int				elem;
-	struct s_stack	*next;
-}	t_stack;
 //	FUNCTIONS	***********	:
 //	***********	Error Handling :
 void	error(void);
 //	***********	Check Functions :
 void	check_args(int ac, char **av);	//	Check if av : is empty || contains only digits
+void	check_duplicated(t_list *stack_a);
 //	***********	Push_swap Function :
 void	push_swap(int ac, char **av);
 //	***********	Push_swap Utils Function :
-t_list	*stock_elements(int ac, char **av);
+t_list	*stock_elements(t_list	*stack_a, int ac, char **av);
 #endif
