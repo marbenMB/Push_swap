@@ -19,15 +19,18 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <string.h>
+# include <limits.h>
 # include "./libft/libft.h"
 
 //	FUNCTIONS	***********	:
 //	***********	Error Handling :
 void	error(void);
 //	***********	Check Functions :
-void	check_args(int ac, char **av);	//	Check if av : is empty || contains only digits
+void	check_args(int ac, char **av);
 void	check_duplicated(t_list *stack_a);
 //	***********	Push_swap Function :
+void	free_tab(char **tab);
+int		ft_atoi_max(const char *str);
 void	push_swap(int ac, char **av);
 //	***********	Push_swap Utils Function :
 t_list	*stock_elements(t_list	*stack_a, int ac, char **av);

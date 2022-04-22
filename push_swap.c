@@ -37,6 +37,5 @@ int	main(int ac, char **av)
 	check_args(ac, av);
 	ft_putendl_fd("\033[32m * -> First Check Done **\033[0m",1);
 	push_swap(ac, av);
-	system("leaks push_swap");
 	return (0);
 }

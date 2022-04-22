@@ -22,6 +22,31 @@ void	free_tab(char **tab)
 	free(tab);
 }
 
+int	ft_atoi_max(const char *str)
+{
+	long	num;
+	int		signe;
+
+	num = 0;
+	signe = 1;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			signe = -signe;
+		str++;
+	}
+	while (*str >= 48 && *str <= 57)
+	{
+		num = num * 10 + *str - 48;
+		if ((num * signe) < INT_MIN || (num * signe) > INT_MAX)
+			error();
+		str++;
+	}
+	return (num * signe);
+}
+
 t_list	*stock_elements(t_list	*stack_a, int ac, char **av)
 {
 	int		idx[2];
@@ -33,7 +58,7 @@ t_list	*stock_elements(t_list	*stack_a, int ac, char **av)
 		idx[1] = -1;
 		arg = ft_split(av[idx[0]], ' ');
 		while (arg[++idx[1]])
-			ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi(arg[idx[1]])));
+			ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi_max(arg[idx[1]])));
 		free_tab(arg);
 	}
 
