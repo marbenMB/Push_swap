@@ -15,7 +15,7 @@ clean :
 
 fclean :
 	make fclean -C ./libft
-	rm -rf $(OBJ) $(NAME) push_swap.dSYM .vscode
+	rm -rf $(OBJ) $(NAME) push_swap.dSYM
 
 re : fclean all
 

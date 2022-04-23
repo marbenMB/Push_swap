@@ -27,6 +27,7 @@
 void	error(void);
 //	***********	Check Functions :
 void	check_args(int ac, char **av);
+int		check_if_sorted(t_list *stack_a);
 void	check_duplicated(t_list *stack_a);
 //	***********	Push_swap Function :
 void	free_tab(char **tab);

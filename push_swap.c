@@ -20,13 +20,11 @@ void	push_swap(int ac, char **av)
 	stack_a = NULL;
 	stack_a = stock_elements(stack_a, ac, av);
 	start = stack_a;
-	while (stack_a)
-	{
-		printf("%d	", stack_a->content);
-		stack_a = stack_a->next;
-	}
-	printf("\n");
 	check_duplicated(start);
+	ft_putendl_fd("\033[32m * -> Second Check Done **\033[0m",1);
+	if (check_if_sorted(start) == 0)
+		exit (EXIT_SUCCESS);
+	ft_putendl_fd("\033[32m * -> Third Check Done **\033[0m",1);
 	ft_lstclear(&start);
 }
 
