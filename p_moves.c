@@ -17,7 +17,7 @@ t_list	*fill_node(t_list *stack)
 	t_list	*node;
 
 	node = ft_lstnew(stack->content);
-	node->index = stack->index;
+	node->idx = stack->idx;
 	return (node);
 }
 
@@ -33,6 +33,8 @@ void	pa(t_list **stack_b, t_list **stack_a)
 		last = *stack_b;
 		*stack_b = (*stack_b)->next;
 		ft_lstdelone(last);
+		ft_putendl_fd("pa", 1);
+		ft_positioning_all(stack_a, stack_b);
 	}
 }
 
@@ -48,5 +50,7 @@ void	pb(t_list **stack_a, t_list **stack_b)
 		last = *stack_a;
 		*stack_a = (*stack_a)->next;
 		ft_lstdelone(last);
+		ft_putendl_fd("pb", 1);
+		ft_positioning_all(stack_a, stack_b);
 	}
 }

@@ -68,20 +68,20 @@ void	ft_index(t_list **stack)
 {
 	t_list	*current;
 	t_list	*tmp;
-	int		idx;
+	int		dexi;
 
 	current = *stack;
 	while (current)
 	{
 		tmp = *stack;
-		idx = 1;
+		dexi = 1;
 		while (tmp)
 		{
 			if (current->content > tmp->content)
-				idx++;
+				dexi++;
 			tmp = tmp->next;
 		}
-		current->index = idx;
+		current->idx = dexi;
 		current = current->next;
 	}
 }

@@ -24,8 +24,9 @@
 typedef struct s_list
 {
 	int				content;
+	int				idx;
+	int				pos;
 	struct s_list	*next;
-	int				index;
 }	t_list;
 
 //BONUS PART FUNC

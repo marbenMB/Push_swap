@@ -32,6 +32,7 @@ void	rra(t_list **stack_a, int call)
 		ft_lstadd_front(stack_a, tmp);
 		if (call)
 			ft_putendl_fd("rra", 1);
+		ft_positioning(stack_a);
 	}
 }
 
@@ -46,6 +47,7 @@ void	rrb(t_list **stack_b, int call)
 		ft_lstadd_front(stack_b, tmp);
 		if (call)
 			ft_putendl_fd("rra", 1);
+		ft_positioning(stack_b);
 	}
 }
 
@@ -54,4 +56,5 @@ void	rrr(t_list **stack_a, t_list **stack_b)
 	rra(stack_a, 0);
 	rrb(stack_b, 0);
 	ft_putendl_fd("rrr", 1);
+	ft_positioning_all(stack_a, stack_b);
 }

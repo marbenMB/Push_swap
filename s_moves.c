@@ -23,6 +23,7 @@ void	sa(t_list **stack_a, int call)
 		ft_lstadd_front(stack_a, tmp);
 		if (call)
 			ft_putendl_fd("sa", 1);
+		ft_positioning(stack_a);
 	}
 }
 
@@ -37,6 +38,7 @@ void	sb(t_list **stack_b, int call)
 		ft_lstadd_front(stack_b, tmp);
 		if (call)
 			ft_putendl_fd("sb", 1);
+		ft_positioning(stack_b);
 	}
 }
 
@@ -45,4 +47,5 @@ void	ss(t_list **stack_a, t_list **stack_b)
 	sa(stack_a, 0);
 	sb(stack_b, 0);
 	ft_putendl_fd("ss", 1);
+	ft_positioning_all(stack_a, stack_b);
 }
