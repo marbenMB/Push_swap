@@ -26,13 +26,27 @@
 //	***********	Error Handling :
 void	error(void);
 //	***********	Check Functions :
+void	check_trim_args(char *av);
 void	check_args(int ac, char **av);
-int		check_if_sorted(t_list *stack_a);
 void	check_duplicated(t_list *stack_a);
-//	***********	Push_swap Function :
+int		check_if_sorted(t_list *stack_a);
+void	check_sort_type(t_list **stack);
+//	***********	Push_swap Utils Function :
 void	free_tab(char **tab);
 int		ft_atoi_max(const char *str);
-void	push_swap(int ac, char **av);
-//	***********	Push_swap Utils Function :
 t_list	*stock_elements(t_list	*stack_a, int ac, char **av);
+void	ft_index(t_list **stack);
+//	***********	Moves Function :
+void	sa(t_list **stack_a, int call);
+void	sb(t_list **stack_b, int call);
+void	ss(t_list **stack_a, t_list **stack_b);
+void	ra(t_list **stack_a, int call);
+void	rb(t_list **stack_b, int call);
+void	rr(t_list **stack_a, t_list **stack_b);
+void	rra(t_list **stack_a, int call);
+void	rrb(t_list **stack_b, int call);
+void	pa(t_list **stack_b, t_list **stack_a);
+void	pb(t_list **stack_a, t_list **stack_b);
+//	***********	Push_swap Function :
+void	push_swap(int ac, char **av);
 #endif

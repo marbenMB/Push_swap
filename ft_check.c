@@ -14,7 +14,7 @@
 
 // TODO : if the arg contain : space or multiple spaces in front -> " 55" or "     5" || just multiple spaces or empty -> "    " or "" || 
 
-void	trim_args(char *av)
+void	check_trim_args(char *av)
 {
 	char	*arg;
 	int		idx;
@@ -49,7 +49,27 @@ void	check_args(int ac, char **av)
 	{
 		if (!av[idx] || !av[idx][0])
 			error();
-		trim_args(av[idx]);
+		check_trim_args(av[idx]);
+	}
+}
+
+void	check_duplicated(t_list *stack_a)
+{
+	int		now;
+	t_list	*start;
+
+	start = stack_a;
+	while (start)
+	{
+		now = start->content;
+		while (stack_a->next)
+		{
+			stack_a = stack_a->next;
+			if (now == stack_a->content)
+				error();
+		}
+		start = start->next;
+		stack_a = start;
 	}
 }
 
@@ -78,22 +98,19 @@ int	check_if_sorted(t_list *stack_a)
 	return (0);
 }
 
-void	check_duplicated(t_list *stack_a)
-{
-	int		now;
-	t_list	*start;
+// void	check_sort_type(t_list **stack)
+// {
+// 	int	stack_len;
 
-	start = stack_a;
-	while (start)
-	{
-		now = start->content;
-		while (stack_a->next)
-		{
-			stack_a = stack_a->next;
-			if (now == stack_a->content)
-				error();
-		}
-		start = start->next;
-		stack_a = start;
-	}
-}
+// 	stack_len = ft_lstsize(*stack);
+// 	// if (stack_len == 2)
+// 	// 	sa(stack);
+// 	if (stack_len == 3)
+// 		sort_tree(stack);
+// 	else if (stack_len == 4)
+// 		sort_four(stack);
+// 	else if (stack_len == 5)
+// 		sort_five(stack);
+// 	else
+// 		sort_big_nums(stack);
+// }

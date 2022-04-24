@@ -64,3 +64,25 @@ t_list	*stock_elements(t_list	*stack_a, int ac, char **av)
 
 	return (stack_a);
 }
+
+void	ft_index(t_list **stack)
+{
+	t_list	*current;
+	t_list	*tmp;
+	int		idx;
+
+	current = *stack;
+	while (current)
+	{
+		tmp = *stack;
+		idx = 1;
+		while (tmp)
+		{
+			if (current->content > tmp->content)
+				idx++;
+			tmp = tmp->next;
+		}
+		current->index = idx;
+		current = current->next;
+	}
+}
