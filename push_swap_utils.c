@@ -61,7 +61,6 @@ t_list	*stock_elements(t_list	*stack_a, int ac, char **av)
 			ft_lstadd_back(&stack_a, ft_lstnew(ft_atoi_max(arg[idx[1]])));
 		free_tab(arg);
 	}
-
 	return (stack_a);
 }
 

@@ -12,8 +12,6 @@
 
 #include "push_swap.h"
 
-// TODO : if the arg contain : space or multiple spaces in front -> " 55" or "     5" || just multiple spaces or empty -> "    " or "" || 
-
 void	check_trim_args(char *av)
 {
 	char	*arg;
@@ -27,7 +25,7 @@ void	check_trim_args(char *av)
 		error();
 	while (arg[++idx])
 	{
-		if (arg[idx] == '-' ||  arg[idx] == '+')
+		if (arg[idx] == '-' || arg[idx] == '+')
 		{
 			if (ft_isdigit(arg[idx - 1]) && arg[idx - 1])
 				error();

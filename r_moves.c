@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   r_moves.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbenbajj <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/24 07:37:20 by mbenbajj          #+#    #+#             */
+/*   Updated: 2022/04/24 07:37:22 by mbenbajj         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ra(t_list **stack_a, int call)
 {
 	t_list	*tmp;
+
 	if (ft_lstsize(*stack_a) > 1)
 	{
 		tmp = *stack_a;
@@ -17,6 +30,7 @@ void	ra(t_list **stack_a, int call)
 void	rb(t_list **stack_b, int call)
 {
 	t_list	*tmp;
+
 	if (ft_lstsize(*stack_b) > 1)
 	{
 		tmp = *stack_b;
