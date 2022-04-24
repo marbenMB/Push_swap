@@ -16,7 +16,8 @@ void	sort_tree(t_list **stack)
 {
 	if (check_if_sorted(*stack) == 0)
 		return ;
-	else if ((*stack)->idx > (*stack)->next->idx && (*stack)->idx > (*stack)->next->next->idx)
+	else if ((*stack)->idx > (*stack)->next->idx \
+				&& (*stack)->idx > (*stack)->next->next->idx)
 	{
 		if ((*stack)->next->idx > (*stack)->next->next->idx)
 		{
@@ -26,14 +27,17 @@ void	sort_tree(t_list **stack)
 		else if ((*stack)->next->idx < (*stack)->next->next->idx)
 			ra(stack, 1);
 	}
-	else if ((*stack)->idx < (*stack)->next->idx && (*stack)->idx < (*stack)->next->next->idx)
+	else if ((*stack)->idx < (*stack)->next->idx \
+				&& (*stack)->idx < (*stack)->next->next->idx)
 	{
 		sa(stack, 1);
 		ra(stack, 1);
 	}
-	else if ((*stack)->idx < (*stack)->next->idx && (*stack)->idx > (*stack)->next->next->idx)
+	else if ((*stack)->idx < (*stack)->next->idx \
+				&& (*stack)->idx > (*stack)->next->next->idx)
 		rra(stack, 1);
-	else if ((*stack)->idx > (*stack)->next->idx && (*stack)->idx < (*stack)->next->next->idx)
+	else if ((*stack)->idx > (*stack)->next->idx \
+				&& (*stack)->idx < (*stack)->next->next->idx)
 		sa(stack, 1);
 }
 

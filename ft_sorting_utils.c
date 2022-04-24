@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sorting_utils.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbenbajj <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/24 23:32:10 by mbenbajj          #+#    #+#             */
+/*   Updated: 2022/04/24 23:32:13 by mbenbajj         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_positioning(t_list **stack)
@@ -58,7 +70,7 @@ int	min_pos(t_list *stack)
 	int		min_idx;
 
 	min_idx = find_min_idx(stack);
-	while(stack->idx != min_idx)
+	while (stack->idx != min_idx)
 		stack = stack->next;
 	return (stack->pos);
 }
