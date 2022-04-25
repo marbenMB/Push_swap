@@ -46,7 +46,7 @@ void	rrb(t_list **stack_b, int call)
 		ft_privous_lstlast(*stack_b)->next = NULL;
 		ft_lstadd_front(stack_b, tmp);
 		if (call)
-			ft_putendl_fd("rra", 1);
+			ft_putendl_fd("rrb", 1);
 		ft_positioning(stack_b);
 	}
 }

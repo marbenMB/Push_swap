@@ -99,9 +99,9 @@ int	check_if_sorted(t_list *stack_a)
 void	check_sort_type(t_list **stack_a, t_list	**stack_b)
 {
 	int	stack_len;
-	int	s;
+	int	constent;
 
-	s = ft_lstsize(*stack_b);
+	constent = 15;
 	stack_len = ft_lstsize(*stack_a);
 	if (stack_len == 2)
 		sa(stack_a, 1);
@@ -111,6 +111,12 @@ void	check_sort_type(t_list **stack_a, t_list	**stack_b)
 		sort_four(stack_a, stack_b);
 	else if (stack_len == 5)
 		sort_five(stack_a, stack_b);
-// 	else
-// 		sort_big_nums(stack);
+	else
+	{
+		if (stack_len <= 250)
+			constent = 15;
+		else if (stack_len > 250)
+			constent = 25;
+		sort_big(stack_a, stack_b, constent);
+	}
 }

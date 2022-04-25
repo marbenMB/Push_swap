@@ -51,11 +51,13 @@ void	pb(t_list **stack_a, t_list **stack_b, int call);
 //	***********	Sorting Utils Function :
 void	ft_positioning_all(t_list **stack_a, t_list **stack_b);
 void	ft_positioning(t_list **stack);
-int		min_pos(t_list *stack);
+int		num_pos(t_list *stack, int choice);
 //	***********	Sorting Function :
 void	sort_tree(t_list **stack);
 void	sort_four(t_list **stack_a, t_list **stack_b);
 void	sort_five(t_list **stack_a, t_list **stack_b);
+void	sort_big(t_list **stack_a, t_list **stack_b, int constent);
+void	b_to_a(t_list **stack_a, t_list **stack_b);
 //	***********	Push_swap Function :
 void	push_swap(int ac, char **av);
 #endif

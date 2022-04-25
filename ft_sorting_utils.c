@@ -47,12 +47,30 @@ int	find_min_idx(t_list *stack)
 	return (min);
 }
 
-int	min_pos(t_list *stack)
+int	find_max_idx(t_list *stack)
 {
-	int		min_idx;
+	int		max;
 
-	min_idx = find_min_idx(stack);
-	while (stack->idx != min_idx)
+	max = 0;
+	while (stack)
+	{
+		if (max < stack->idx)
+			max = stack->idx;
+		stack = stack->next;
+	}
+	return (max);
+}
+
+int	num_pos(t_list *stack, int choice)
+{
+	int		dex;
+
+	dex = 0;
+	if (!choice)
+		dex = find_min_idx(stack);
+	else if (choice)
+		dex = find_max_idx(stack);
+	while (stack->idx != dex)
 		stack = stack->next;
 	return (stack->pos);
 }
