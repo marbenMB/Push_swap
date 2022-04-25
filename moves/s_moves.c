@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	sa(t_list **stack_a, int call)
 {
@@ -42,10 +42,11 @@ void	sb(t_list **stack_b, int call)
 	}
 }
 
-void	ss(t_list **stack_a, t_list **stack_b)
+void	ss(t_list **stack_a, t_list **stack_b, int call)
 {
 	sa(stack_a, 0);
 	sb(stack_b, 0);
-	ft_putendl_fd("ss", 1);
+	if (call)
+		ft_putendl_fd("ss", 1);
 	ft_positioning_all(stack_a, stack_b);
 }

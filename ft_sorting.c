@@ -61,9 +61,9 @@ void	sort_four(t_list **stack_a, t_list **stack_b)
 		while (++i < len - pos_min + 1)
 			rra(stack_a, 1);
 	}
-	pb(stack_a, stack_b);
+	pb(stack_a, stack_b, 1);
 	sort_tree(stack_a);
-	pa(stack_b, stack_a);
+	pa(stack_b, stack_a, 1);
 }
 
 void	sort_five(t_list **stack_a, t_list **stack_b)
@@ -86,7 +86,7 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 		while (++i < len - pos_min + 1)
 			rra(stack_a, 1);
 	}
-	pb(stack_a, stack_b);
+	pb(stack_a, stack_b, 1);
 	sort_four(stack_a, stack_b);
-	pa(stack_b, stack_a);
+	pa(stack_b, stack_a, 1);
 }

@@ -1,5 +1,6 @@
 NAME = push_swap
-SRC = push_swap.c push_swap_utils.c ft_check.c error_handling.c s_moves.c r_moves.c rr_moves.c p_moves.c ft_sorting.c ft_sorting_utils.c
+SRC = push_swap.c push_swap_utils.c ft_check.c error_handling.c \
+		moves/s_moves.c moves/r_moves.c moves/rr_moves.c moves/p_moves.c ft_sorting.c ft_sorting_utils.c
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 

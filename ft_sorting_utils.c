@@ -29,26 +29,8 @@ void	ft_positioning(t_list **stack)
 
 void	ft_positioning_all(t_list **stack_a, t_list **stack_b)
 {
-	int		post;
-	t_list	*st_a;
-	t_list	*st_b;
-
-	post = 1;
-	st_a = (*stack_a);
-	st_b = (*stack_b);
-	while (st_a)
-	{
-		st_a->pos = post;
-		st_a = st_a->next;
-		post++;
-	}
-	post = 1;
-	while (st_b)
-	{
-		st_b->pos = post;
-		st_b = st_b->next;
-		post++;
-	}
+	ft_positioning(stack_a);
+	ft_positioning(stack_b);
 }
 
 int	find_min_idx(t_list *stack)

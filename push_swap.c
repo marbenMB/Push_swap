@@ -16,10 +16,10 @@ void	print_struct(t_list *start)
 {
 	while (start)
 	{
-		printf("\033[35m * +> %d : [%d] |%d|**\033[0m\n", start->content, start->idx, start->pos);
+		printf("\033[35m * +> %10d :	[%d]	|%d|	**\033[0m\n", start->content, start->idx, start->pos);
 		start = start->next;
 	}
-	ft_putendl_fd("--------------------------", 1);
+	ft_putendl_fd("-------------------------------------------", 1);
 }
 
 void	push_swap(int ac, char **av)
@@ -35,9 +35,7 @@ void	push_swap(int ac, char **av)
 		exit (EXIT_SUCCESS);
 	ft_index(&stack_a);
 	ft_positioning_all(&stack_a, &stack_b);
-	// print_struct(stack_a);
 	check_sort_type(&stack_a, &stack_b);
-	// print_struct(stack_a);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
 }
@@ -51,23 +49,3 @@ int	main(int ac, char **av)
 	// system("leaks push_swap");
 	return (0);
 }
-
-/* // ****************************************************************
-	t_list	*tmp;
-	ft_putendl_fd("\033[38m* stack_1 before *\033[0m", 1);
-	print_struct(stack_a);
-	tmp = ft_lstnew(12);
-	tmp->next = ft_lstnew(9);
-	tmp->next->next = ft_lstnew(1);
-	tmp->next->next->next = ft_lstnew(31);
-	ft_putendl_fd("\033[38m* stack_2 before *\033[0m", 1);
-	print_struct(tmp);
-	pa(&stack_a, &tmp);
-	pa(&stack_a, &tmp);
-	// pa(&stack_a, &tmp);
-	ft_putendl_fd("\033[38m* stack_2 after *\033[0m", 1);
-	print_struct(tmp);
-	ft_putendl_fd("\033[38m* stack_1 after *\033[0m", 1);
-	print_struct(stack_a);
-	ft_lstclear(&tmp);
-// ****************************************************************** */

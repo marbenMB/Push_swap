@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_list	*ft_privous_lstlast(t_list *lst)
 {	
@@ -51,10 +51,11 @@ void	rrb(t_list **stack_b, int call)
 	}
 }
 
-void	rrr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_list **stack_a, t_list **stack_b, int call)
 {
 	rra(stack_a, 0);
 	rrb(stack_b, 0);
-	ft_putendl_fd("rrr", 1);
+	if (call)
+		ft_putendl_fd("rrr", 1);
 	ft_positioning_all(stack_a, stack_b);
 }

@@ -39,14 +39,15 @@ void	ft_index(t_list **stack);
 //	***********	Moves Function :
 void	sa(t_list **stack_a, int call);
 void	sb(t_list **stack_b, int call);
-void	ss(t_list **stack_a, t_list **stack_b);
+void	ss(t_list **stack_a, t_list **stack_b, int call);
 void	ra(t_list **stack_a, int call);
 void	rb(t_list **stack_b, int call);
-void	rr(t_list **stack_a, t_list **stack_b);
+void	rr(t_list **stack_a, t_list **stack_b, int call);
 void	rra(t_list **stack_a, int call);
 void	rrb(t_list **stack_b, int call);
-void	pa(t_list **stack_b, t_list **stack_a);
-void	pb(t_list **stack_a, t_list **stack_b);
+void	rrr(t_list **stack_a, t_list **stack_b, int call);
+void	pa(t_list **stack_b, t_list **stack_a, int call);
+void	pb(t_list **stack_a, t_list **stack_b, int call);
 //	***********	Sorting Utils Function :
 void	ft_positioning_all(t_list **stack_a, t_list **stack_b);
 void	ft_positioning(t_list **stack);
