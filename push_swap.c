@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-void	print_struct(t_list *start)
-{
-	while (start)
-	{
-		printf("\033[35m * +> %10d :	[%d]	|%d|	**\033[0m\n", start->content, start->idx, start->pos);
-		start = start->next;
-	}
-	ft_putendl_fd("-------------------------------------------", 1);
-}
+// void	print_struct(t_list *start)
+// {
+// 	while (start)
+// 	{
+// 		printf("\033[35m * +> %10d :	[%d]	|%d|	**\033[0m\n", start->content, start->idx, start->pos);
+// 		start = start->next;
+// 	}
+// 	ft_putendl_fd("-------------------------------------------", 1);
+// }
 
 void	push_swap(int ac, char **av)
 {
