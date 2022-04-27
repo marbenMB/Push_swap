@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	error(void)
 {
-	ft_putendl_fd("\033[31m ** ERROR **\033[0m", 2);
+	ft_putendl_fd("\033[31mERROR\033[0m", 2);
 	exit(EXIT_FAILURE);
 }

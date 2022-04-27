@@ -56,9 +56,9 @@ void	read_instraction(t_list **stack_a, t_list **stack_b)
 		free(line);
 	}
 	if (!check_if_sorted(*stack_a) && ft_lstsize(*stack_b) == 0)
-		ft_putendl_fd("\033[32m** OK **\033[0m", 1);
+		ft_putendl_fd("\033[32mOK\033[0m", 1);
 	else
-		ft_putendl_fd("\033[33m** KO **\033[0m", 1);
+		ft_putendl_fd("\033[33mKO\033[0m", 1);
 }
 
 void	checker(int ac, char **av)
