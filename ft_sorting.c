@@ -6,7 +6,7 @@
 /*   By: mbenbajj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 07:39:06 by mbenbajj          #+#    #+#             */
-/*   Updated: 2022/04/24 07:39:08 by mbenbajj         ###   ########.fr       */
+/*   Updated: 2022/04/27 02:38:54 by mbenbajj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 	pos_min = num_pos(*stack_a, 0);
 	len = ft_lstsize(*stack_a);
 	i = -1;
-	if (pos_min <= (len / 2))
+	if (pos_min <= (len / 2) + 1)
 	{
 		while (++i < pos_min - 1)
 			ra(stack_a, 1);
@@ -119,7 +119,7 @@ void	b_to_a(t_list **stack_a, t_list **stack_b)
 void	sort_big(t_list **stack_a, t_list **stack_b, int constent)
 {
 	int		range;
-	
+
 	range = 2;
 	while (*stack_a)
 	{

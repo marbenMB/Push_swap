@@ -79,7 +79,7 @@ int	check_if_sorted(t_list *stack_a)
 
 	len_stack = ft_lstsize(stack_a);
 	if (len_stack == 1)
-		exit (EXIT_SUCCESS);
+		return (0);
 	start = stack_a;
 	while (start)
 	{
@@ -105,7 +105,7 @@ void	check_sort_type(t_list **stack_a, t_list	**stack_b)
 	stack_len = ft_lstsize(*stack_a);
 	if (stack_len == 2)
 		sa(stack_a, 1);
-	if (stack_len == 3)
+	else if (stack_len == 3)
 		sort_tree(stack_a);
 	else if (stack_len == 4)
 		sort_four(stack_a, stack_b);

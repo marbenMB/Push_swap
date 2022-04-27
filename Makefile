@@ -1,7 +1,7 @@
 NAME = push_swap
 SRC = push_swap.c push_swap_utils.c ft_check.c error_handling.c \
 		moves/s_moves.c moves/r_moves.c moves/rr_moves.c moves/p_moves.c ft_sorting.c ft_sorting_utils.c
-BNS_SRC = checker.c checker_utils.c push_swap_utils.c ft_check.c error_handling.c \
+BNS_SRC = checker.c push_swap_utils.c ft_check.c error_handling.c \
 		moves/s_moves.c moves/r_moves.c moves/rr_moves.c moves/p_moves.c ft_sorting.c ft_sorting_utils.c \
 		Get_Next_Line_Proj/get_next_line.c Get_Next_Line_Proj/get_next_line_utils.c
 OBJ = $(SRC:.c=.o)
@@ -24,7 +24,7 @@ clean :
 
 fclean :
 	make fclean -C ./libft
-	rm -rf $(OBJ) $(NAME) $(BNS_OBJ) push_swap.dSYM checker.dSYM
+	rm -rf $(OBJ) $(NAME) $(BNS_OBJ) checker push_swap.dSYM checker.dSYM
 
 re : fclean all
 

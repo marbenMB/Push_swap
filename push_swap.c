@@ -6,21 +6,11 @@
 /*   By: mbenbajj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 00:09:15 by mbenbajj          #+#    #+#             */
-/*   Updated: 2022/04/20 00:09:16 by mbenbajj         ###   ########.fr       */
+/*   Updated: 2022/04/27 02:39:54 by mbenbajj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	print_struct(t_list *start)
-// {
-// 	while (start)
-// 	{
-// 		printf("\033[35m * +> %10d :	[%d]	|%d|	**\033[0m\n", start->content, start->idx, start->pos);
-// 		start = start->next;
-// 	}
-// 	ft_putendl_fd("-------------------------------------------", 1);
-// }
 
 void	push_swap(int ac, char **av)
 {
@@ -46,6 +36,5 @@ int	main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	check_args(ac, av);
 	push_swap(ac, av);
-	// system("leaks push_swap");
 	return (0);
 }

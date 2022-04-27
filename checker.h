@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbenbajj <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/27 02:37:04 by mbenbajj          #+#    #+#             */
+/*   Updated: 2022/04/27 02:37:13 by mbenbajj         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CHECKER_H
 # define CHECKER_H
 
@@ -11,8 +23,6 @@
 # include "./libft/libft.h"
 # include "push_swap.h"
 # include "./Get_Next_Line_Proj/get_next_line.h"
-
-# define INS {"pa", "pb", "sa", "sb", "ss", "ra", "rb", "rr", "rra", "rrb", "rrr", NULL}
 
 //	FUNCTIONS	***********	:
 //	***********	Checker functions :

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbenbajj <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/27 02:34:39 by mbenbajj          #+#    #+#             */
+/*   Updated: 2022/04/27 02:36:38 by mbenbajj         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 
 void	find_instraction(char *input, t_list **stack_a, t_list **stack_b)
@@ -24,7 +36,7 @@ void	find_instraction(char *input, t_list **stack_a, t_list **stack_b)
 		sb(stack_b, 0);
 	else if (!ft_strcmp(input, "ss\n"))
 		ss(stack_a, stack_b, 0);
-	else 
+	else
 		error();
 }
 
@@ -38,7 +50,7 @@ void	read_instraction(t_list **stack_a, t_list **stack_b)
 		if (!line)
 		{
 			free(line);
-			break;
+			break ;
 		}
 		find_instraction(line, stack_a, stack_b);
 		free(line);
@@ -47,7 +59,6 @@ void	read_instraction(t_list **stack_a, t_list **stack_b)
 		ft_putendl_fd("\033[32m** OK **\033[0m", 1);
 	else
 		ft_putendl_fd("\033[33m** KO **\033[0m", 1);
-	system("leaks checker");
 }
 
 void	checker(int ac, char **av)
@@ -59,8 +70,6 @@ void	checker(int ac, char **av)
 	stack_a = NULL;
 	stack_a = stock_elements(stack_a, ac, av);
 	check_duplicated(stack_a);
-	if (check_if_sorted(stack_a) == 0)
-		exit (EXIT_SUCCESS);
 	ft_index(&stack_a);
 	ft_positioning_all(&stack_a, &stack_b);
 	read_instraction(&stack_a, &stack_b);
@@ -74,6 +83,5 @@ int	main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	check_args(ac, av);
 	checker(ac, av);
-	// system("leaks push_swap");
 	return (0);
 }
