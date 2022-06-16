@@ -24,25 +24,30 @@ BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_ba
 				ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJECT = $(SRC:.c=.o)
+
 BONUS_OBJECT = $(BONUS_SRC:.c=.o)
+
 CC = cc
-CFlAGS = -Wall -Wextra -Werror -I.
+
+CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
 $(NAME) : $(OBJECT) libft.h
-	ar rc $(NAME) $(OBJECT) 
-$(OBJECT):	$(SRC)
-		gcc -Wall -Werror -Wextra -c  $(SRC)
+	ar rc $(NAME) $(OBJECT)
+
+%.o: %.c libft.h
+		cc $(CFLAGS) -c $< -o $@
 
 bonus : $(OBJECT) $(BONUS_OBJECT)
 	ar rc $(NAME) $(OBJECT) $(BONUS_OBJECT)
-$(BONUS_OBJECT):	$(BONUS_SRC)
-		gcc -Wall -Werror -Wextra -c  $(BONUS_SRC)
+
 clean :
 	rm -f $(OBJECT) $(BONUS_OBJECT)
+
 fclean : clean
 	rm -f $(NAME)
+
 re : fclean all
 
 .PHONY : clean fclean all re bonus
